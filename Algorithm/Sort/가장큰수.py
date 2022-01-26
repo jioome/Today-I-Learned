@@ -1,14 +1,7 @@
-from itertools import permutations
-
 def solution(numbers):
-    answer = ''
-    pool = list(permutations(numbers,3))
-    pool.sort()
-
-    for i in pool:
-        print(i)
-    print(pool)
-
-    return answer
+    numbers = list(map(str, numbers))
+    numbers.sort(key=lambda x: x * 3, reverse=True)
+    print((''.join(numbers)))
+    return numbers
 
 solution([6, 10, 2])
