@@ -9,4 +9,4 @@ def solution(citations):
     return 0
 
 
-solution([0,1,2,5,6])
+solution([0,1,2,3,3,3,3,3,3,4,10,20,30,40])
