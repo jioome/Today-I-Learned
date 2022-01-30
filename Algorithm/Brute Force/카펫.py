@@ -7,6 +7,6 @@ def solution(brown, yellow):
             w = S //h
         if (h-2)*(w-2) == yellow:
             return [w,h]
-        
+    print(answer) 
     return answer
 solution(10, 2)
