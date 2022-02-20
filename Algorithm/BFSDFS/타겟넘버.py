@@ -7,7 +7,10 @@ def solution(numbers, target):
             if result == target : 
                 nonlocal answer 
                 answer += 1 
-
+            return 
+        else : 
+            dfs(idx+1,result +numbers[idx])
+            dfs(idx+1,result -numbers[idx])
     
     dfs(0,0)
 

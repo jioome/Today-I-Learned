@@ -13,7 +13,8 @@ def solution(n, computers):
     for start in range(n):
         if visited[start] == False : 
             dfs(n,computers,start,visited)
-
+            answer += 1 
+    
     return answer
 
 solution(3,	[[1, 1, 0], [1, 1, 0], [0, 0, 1]])
