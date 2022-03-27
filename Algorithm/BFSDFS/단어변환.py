@@ -19,8 +19,10 @@ def solution(begin, target, words):
                 for j in range(len(word)):
                     if word[j] != words[i][j]:
                         temp_cnt += 1 
+                # 한 글자만 다를 때 큐에 넣기 
                 if temp_cnt == 1 :
                     q.append([words[i],cnt+1])
                     V[i] = 1
     print(answer)
     return answer
+
