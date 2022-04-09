@@ -5,10 +5,9 @@ def solution(distance, rocks, n):
     right = distance
     rocks.append(distance)
     rocks.sort()
-
     while left <= right : 
         mid = (left + right) // 2  # 거리의 최솟값을 mid로 잡음(거리가 mid 이하이면 다 없앤다)
-        current, remove = 0,0 #현재 위치 , 제거할 바위 수 
+        current, remove = 0,0 # 현재 위치 , 제거할 바위 수 
         min_distance = float('inf')
 
         for rock in rocks : 
@@ -19,15 +18,14 @@ def solution(distance, rocks, n):
                 current = rock
                 min_distance = min(min_distance,dis)
         
-        if remove >= n : 
-            right = mid
+        if remove > n : 
+            right = mid -1 
         else : 
-            
+            answer = min_distance
             left = mid + 1
-            
-        answer = min_distance
 
-        
+
+    print(answer)        
     return answer
 
 
