@@ -1,7 +1,8 @@
 import queue
 import sys
 from collections import deque
-
+# DFS : 재귀 , 스택
+# BFS : 큐 deque
 def dfs(v):
     print(v,end=' ')
     visited[v] = True
