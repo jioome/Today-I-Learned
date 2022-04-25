@@ -1,5 +1,3 @@
-# 상하좌우 중에 하나라도 그래프 범위에 벗어나 버리면 
-# False 를 리턴하기 때문에 계속 False 를 return 하고 있음 
 
 import sys
 
