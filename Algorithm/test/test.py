@@ -1,45 +1,33 @@
-import sys,copy
+
+
+import sys
 sys.stdin =open('in.txt','rt')
 input = sys.stdin.readline 
-n = int(input())
-graph = [] 
+sys.setrecursionlimit(1000000)
 
-for _ in range(n):
-    graph.append(list(map(int,input().split())))
-
-dx = [1,-1,0,0]
-dy = [0,0,-1,1]
-
-def dfs(x,y,h):
-    for i in range(4):
-        nx = x + dx[i]
-        ny = y + dy[i]
-        if 0<= nx < n and 0 <= ny < n and check[nx][ny] > h:
-            check[nx][ny] = 0 
-            dfs(nx,ny,h)
+t = int(input())
 
 
-
-
-## 최대 높이 
-height = 0 
-for i in graph:
-    height = max(height,max(i))
-
-#안전한 영역 최대 개수 
-
-ans = []
-for h in range(height):
-    check = copy.deepcopy(graph)
-    cnt = 0 
-    for i in range(n):
-        for j in range(n):
-            if check[i][j] > h : 
-                cnt += 1 
-                check[i][j] = 0 
-                dfs(i,j,h)
-    ans.append(cnt)
-
-print(max(ans))
-
+def dfs(i):
+    visited[i] = 1
+    cycle.append(i)
+    global result 
     
+    if visited[student[i]]:
+        if student[i] in cycle:
+            result += cycle[cycle.index(student[i]):]
+            return 
+    else : 
+        dfs(student[i])
+
+for _ in range(t):
+    n = int(input())
+    visited = [0]*(n+1)
+    student = [0] + list(map(int,input().split()))
+    
+    result = [] 
+    for i in range(1,n+1):
+        if visited[i] == 0 : 
+            cycle = [] 
+            dfs(i)
+    print(n-len(result))
