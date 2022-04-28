@@ -8,14 +8,14 @@ dx = [1,-1,0,0,-1,-1,1,1]
 dy = [0,0,-1,1,-1,1,-1,1]
 
 def DFS(x, y):
-        mapList[x][y] = 0  # 방문 완료
+        visitedList[x][y] = True  # 방문 완료
 
         for i in range(8): # 대각선까지 포함
             nX = x + dx[i]
             nY = y + dy[i]
 
             if 0 <= nX < h and 0 <= nY < w:
-                if mapList[nX][nY] == 1:
+                if visitedList[nX][nY] == False and mapList[nX][nY] == 1:
                     DFS(nX, nY)
 
 while True:
@@ -33,7 +33,7 @@ while True:
 
     for i in range(h):
         for j in range(w):
-            if mapList[i][j] == 1:
+            if visitedList[i][j] == False and mapList[i][j] == 1:
                 DFS(i, j)
                 count += 1
 
