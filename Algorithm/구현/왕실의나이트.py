@@ -1,4 +1,5 @@
 location = input()
+# 문자를 유니코드 정수로 바꾸기 : ord
 col = int(ord(location[0])-97)
 row = int(location[1])-1
 
@@ -14,4 +15,3 @@ for i in range(8):
     if 0 <= nx < 8 and 0 <= ny < 8:
         cnt += 1
 print(cnt)
-df
