@@ -1,40 +1,39 @@
-import sys
-sys.stdin =open('in.txt','rt')
-input = sys.stdin.readline
-sys.setrecursionlimit(1000000)
-dx = [1,-1,0,0]
-dy = [0,0,1,-1]
+import math
 
-def dfs(x,y,h):
-    for i in range(4):
-        nx = x + dx[i]
-        ny = y + dy[i]
-        if -1<nx<n and -1<ny<n and visited[nx][ny] == 0 and graph[nx][ny]>h:
-            visited[nx][ny] = 1
-            dfs(nx,ny,h)
 
-n = int(input())
-graph = []
-for i in range(n):
-    graph.append(list(map(int,input().split())))
+def solution(m, musicinfos):
+    answer = None
+    # 문자열 치환
+    m = m.replace("C#", "c").replace("D#", "d").replace(
+        "F#", "f").replace("G#", "g").replace("A#", "a")
 
-high = 0
-for i in range(len(graph)):
-    for j in graph[i]:
-        if j > high:
-            high = j
+    for musicinfo in musicinfos:
+        start, end, title, code = musicinfo.split(",")
 
-num = 1
-for i in range(high):
-    visited = [[0]*n for _ in range(n)]
-    cnt = 0
-    for j in range(n):
-        for k in range(n):
-            if graph[j][k] > i and visited[j][k] == 0:
-                cnt += 1
-                visited[j][k] = 1
-                dfs(j,k,i)
-    
-    num = max(num,cnt)
+        hour, minute = map(int, start.split(":"))
+        start = hour * 60 + minute
 
-print(num)
+        hour, minute = map(int, end.split(":"))
+        end = hour * 60 + minute
+        duration = end - start  # 음악이 play된 시간
+
+        # 악보 # 제거
+        code = code.replace("C#", "c").replace("D#", "d").replace(
+            "F#", "f").replace("G#", "g").replace("A#", "a")
+
+        if len(code) > duration:
+            code = code[:duration]
+        else:
+            q, r = divmod(duration, len(code))
+            code = code*q + code[:r]
+
+        if m not in code:
+            continue
+
+        if answer == None or answer[0] < duration or (answer[0] == duration and answer[1] > start):
+            answer = (duration, start, title)
+
+    if answer:
+        return answer[-1]
+
+    return "(None)"

@@ -28,7 +28,13 @@ while queue:
                 queue.append((nx,ny))
                 tomato[nx][ny] = tomato[x][y]+1 # 익히고 1을 더해주면서 횟수를 세어주기
                 
-if 0 in tomato : 
+flag = False
+for i in range(n):
+    for j in range(m):
+        if tomato[i][j] == 0:
+            flag = True
+            break
+if flag:
     print(-1)
 else:
     print(max(map(max,tomato))-1) # 처음 토마토 시작을 1로 표현했으니 1을 빼준다
