@@ -1,39 +1,33 @@
-import math
+import sys
+from collections import deque
+import sys
+sys.stdin = open('in.txt', 'rt')
 
+t = int(input())
+for i in range(t):
+    a, b = map(int, input().split())
+    q = deque()
+    path = ''
+    visited = [0]*10000
+    q.append((a, ''))
+    while q:
+        num, path = q.popleft()
+        if num == b:
+            print(path)
+            break
+        visited[num] = 1
+        num2 = (num*2) % 10000
+        if visited[num2] == 0:
+            q.append((num2, path+"D"))
 
-def solution(m, musicinfos):
-    answer = None
-    # 문자열 치환
-    m = m.replace("C#", "c").replace("D#", "d").replace(
-        "F#", "f").replace("G#", "g").replace("A#", "a")
+        num2 = (num-1) % 10000
+        if visited[num2] == 0:
+            q.append((num2, path+"S"))
 
-    for musicinfo in musicinfos:
-        start, end, title, code = musicinfo.split(",")
+        num2 = (num*10 + +(num//1000)) % 10000
+        if visited[num2] == 0:
+            q.append((num2, path+"L"))
 
-        hour, minute = map(int, start.split(":"))
-        start = hour * 60 + minute
-
-        hour, minute = map(int, end.split(":"))
-        end = hour * 60 + minute
-        duration = end - start  # 음악이 play된 시간
-
-        # 악보 # 제거
-        code = code.replace("C#", "c").replace("D#", "d").replace(
-            "F#", "f").replace("G#", "g").replace("A#", "a")
-
-        if len(code) > duration:
-            code = code[:duration]
-        else:
-            q, r = divmod(duration, len(code))
-            code = code*q + code[:r]
-
-        if m not in code:
-            continue
-
-        if answer == None or answer[0] < duration or (answer[0] == duration and answer[1] > start):
-            answer = (duration, start, title)
-
-    if answer:
-        return answer[-1]
-
-    return "(None)"
+        num2 = (num % 10)*1000 + (num//10)
+        if visited[num2] == 0:
+            q.append((num2, path+"R"))
