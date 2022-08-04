@@ -1,33 +1,23 @@
-import sys
-from collections import deque
-import sys
-sys.stdin = open('in.txt', 'rt')
+# dfs
+def dfs(computers, x, y):
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+    computers[x][y] = 2
+    computers[y][x] = 2
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < len(computers) and 0 <= ny < len(computers) and computers[nx][ny] == 1:
+            dfs(computers, nx, ny)
 
-t = int(input())
-for i in range(t):
-    a, b = map(int, input().split())
-    q = deque()
-    path = ''
-    visited = [0]*10000
-    q.append((a, ''))
-    while q:
-        num, path = q.popleft()
-        if num == b:
-            print(path)
-            break
-        visited[num] = 1
-        num2 = (num*2) % 10000
-        if visited[num2] == 0:
-            q.append((num2, path+"D"))
 
-        num2 = (num-1) % 10000
-        if visited[num2] == 0:
-            q.append((num2, path+"S"))
+def solution(n, computers):
+    answer = 0
 
-        num2 = (num*10 + +(num//1000)) % 10000
-        if visited[num2] == 0:
-            q.append((num2, path+"L"))
+    for x in range(n):
+        for y in range(n):
+            if computers[x][y] == 1:
+                dfs(computers, x, y)
+                answer += 1
 
-        num2 = (num % 10)*1000 + (num//10)
-        if visited[num2] == 0:
-            q.append((num2, path+"R"))
+    return answer

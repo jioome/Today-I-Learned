@@ -15,8 +15,10 @@ for i in range(n):
     power_list.append((power[i], p_num[i]))
 power_list.sort()
 answer = 0
+sump = 0
 for p, n in power_list:
-    k -= p
+    sump += p
+    k -= sump
     if k >= 0:
         answer += n
     else:

@@ -1,19 +1,21 @@
-def solution(N):
-    bin_num = bin(N)
-    list_one = []
-    dist = 0
-    print(type(bin_num))
-    for i in range(len(bin_num)):
-        if bin_num[i] == '1':
-            list_one.append(i)
+from collections import Counter, defaultdict, OrderedDict
 
-    if len(list_one) == 1 or len(list_one) == 0:
-        return 0
-    else:
-        for i in range(1, len(list_one)):
-            dist = max(dist, list_one[i]-list_one[i-1]-1)
-        print(dist)
-        return dist
+a = defaultdict(int)
+print(a)
+a['B'] = 3
+a['C'] += 1
+a['B'] += 1
+print(a)
 
+b = [2, 3, 3, 4, 5, 6]
 
-solution(1041)
+c = Counter(b)
+
+print(c)
+print(c.most_common(2))
+
+T = {'1': 1, '2': 4}
+OrderedDict(T)
+print(T)
+
+print(T)

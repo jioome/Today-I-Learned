@@ -7,7 +7,7 @@ def solution(A, K):
         if idx >= len(A):
             idx = idx % len(A)
         answer[idx] = A[i]
-    print(answer)
+    return answer
 
 
 solution([0, 0, 0], 1)
