@@ -9,7 +9,7 @@
 - Deadlocks
 - [Memory Management](./memory-management.md)
 - [Virtual Memory](./virtual-memory.md)
-- [File System](./File-System.md)]
+- [File System](./File-System.md)
 - [Disk Management](./Disk-Management.md)
 
 ### [Network Study](https://github.com/Growth-Collectors/Network-study)
