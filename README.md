@@ -1,6 +1,6 @@
 # Today-I-Learned
 
-### [Operation System Study](https://github.com/Growth-Collectors/OS-study)
+### [Operating System Study](https://github.com/Growth-Collectors/OS-study)
 - System Structure & Program Execution
 - [Process](https://github.com/Growth-Collectors/OS-study/blob/2095a576f0d19a85b1968706313c5b4e0e08ffa8/Process.md)
 - Process Management
