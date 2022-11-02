@@ -1,12 +1,12 @@
 # Today-I-Learned
 
 ### [Operating System](https://github.com/Growth-Collectors/OS-study)
-- System Structure & Program Execution
+- [System Structure & Program Execution](https://github.com/Growth-Collectors/OS-study/blob/b61ce2d79ed9c99292759e77d44b6c0abdcbab88/System%20Structure%20&%20Program%20Execution.md)
 - [Process](https://github.com/Growth-Collectors/OS-study/blob/2095a576f0d19a85b1968706313c5b4e0e08ffa8/Process.md)
-- Process Management
+- [Process Management](https://github.com/Growth-Collectors/OS-study/blob/84c1b44250cd89bad6c5ab5a7b44e0f11fcc4414/Process%20Management.md)
 - [CPU Scheduling](https://github.com/Growth-Collectors/OS-study/blob/main/CPU%20Scheduling.md)
 - [Process Synchronization](https://github.com/Growth-Collectors/OS-study/blob/main/Process%20Synchronization%20(Critical%20Section).md) 
-- Deadlocks
+- [Deadlocks](https://github.com/Growth-Collectors/OS-study/blob/2685b7853bf688f8b590a0b2be58d81b16b8be29/Deadlocks.md)
 - [Memory Management](./memory-management.md)
 - [Virtual Memory](./virtual-memory.md)
 - [File System](./File-System.md)
