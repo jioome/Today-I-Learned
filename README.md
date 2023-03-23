@@ -1,6 +1,6 @@
 # Today-I-Learned
-
-### [Operating System](https://github.com/Growth-Collectors/OS-study)
+## [Effective Java](https://github.com/Growth-Collectors/effective-java)
+## [Operating System](https://github.com/Growth-Collectors/OS-study)
 - [System Structure & Program Execution](https://github.com/Growth-Collectors/OS-study/blob/b61ce2d79ed9c99292759e77d44b6c0abdcbab88/System%20Structure%20&%20Program%20Execution.md)
 - [Process](https://github.com/Growth-Collectors/OS-study/blob/2095a576f0d19a85b1968706313c5b4e0e08ffa8/Process.md)
 - [Process Management](https://github.com/Growth-Collectors/OS-study/blob/84c1b44250cd89bad6c5ab5a7b44e0f11fcc4414/Process%20Management.md)
@@ -12,7 +12,7 @@
 - [File System](./File-System.md)
 - [Disk Management](./Disk-Management.md)
 
-### [Network](https://github.com/Growth-Collectors/Network-study)
+## [Network](https://github.com/Growth-Collectors/Network-study)
 - [01. 네트워크란 무엇인가?](https://github.com/Growth-Collectors/Network-study/blob/f4026aba4cc789238a587f8bdf672124b01b8647/01.%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%3F.md)
 - [02. 네트워크의 기준! 네트워크 모델](https://github.com/Growth-Collectors/Network-study/blob/4c4c679eb5fe8f06cdec06f07eab6b6ba784172f/02.%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9D%98%20%EA%B8%B0%EC%A4%80-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EB%AA%A8%EB%8D%B8.md)
 - [03. 2계층: Local Area Network 통신 방법](https://github.com/Growth-Collectors/Network-study/blob/4c4c679eb5fe8f06cdec06f07eab6b6ba784172f/03.%202%EA%B3%84%EC%B8%B5-%EA%B0%80%EA%B9%8C%EC%9D%B4%20%EC%9E%88%EB%8A%94%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC.md)
